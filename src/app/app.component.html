@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="page-title">
+    {{title}}
+  </div>
+  <div class="title-separator"></div>
+  <div *ngFor="let item of data;let i = index;">
+    <div class="accordion" (click)="toggleAccordian(i, item.id)" id="section_{{item.id}}">
+      <span class="accordion__id">Q{{item.id}}</span>
+      <span class="accordion__quest">{{item.question}}</span>
+      <span class="accordion__icon">
+        <svg class="svg-rotate__icon" width="20px" height="30px" viewBox="0 0 357 357">
+          <g id="add">
+            <path d="M357,204H204v153h-51V204H0v-51h153V0h51v153h153V204z"/>
+          </g>
+        </svg>
+      </span>
+    </div>
+    <div class="panel" hide="!item.isActive">
+      <p> {{item.answer}} </p>
+    </div>
+  </div>
+</div>
